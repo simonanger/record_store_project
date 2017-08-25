@@ -9,9 +9,9 @@ class Album
 
   def initialize(params)
     @id = params['id'].to_i if params['id']
-    @title = params['title'].first.upcase
+    @title = params['title']
     @artwork = params['artwork']
-    @genre = params['genre'].upcase
+    @genre = params['genre']
     @stock = params['stock'].to_i()
     @artist_id = params['artist_id']
   end
@@ -66,7 +66,7 @@ class Album
 
   def delete()
     sql = "DELETE FROM albums
-    WHERE id = $;1"
+    WHERE id = $1;"
     values = [@id]
     SqlRunner.run(sql, values)
   end
