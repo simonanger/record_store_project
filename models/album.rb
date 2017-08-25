@@ -32,7 +32,7 @@ class Album
   end
 
   def self.all()
-    sql = 'SELECT * FROM albums'
+    sql = 'SELECT * FROM albums;'
     values = []
     albums = SqlRunner.run(sql, values)
     result = Album.map_items(albums)
@@ -41,14 +41,14 @@ class Album
 
   def self.find(id)
     sql = ' SELECT * FROM albums
-    WHERE id = $1'
+    WHERE id = $1;'
     values = [id]
     result = SqlRunner.run(sql, values)
     return Album.new(result[0])
   end
 
   def artist()
-    sql = ' SELECT * FROM artists WHERE artist_id = $1'
+    sql = ' SELECT * FROM artists WHERE artist_id = $1;'
     values = [id]
     result = SqlRunner.run(sql, values)
     return Artist.map_items(result)
@@ -56,6 +56,12 @@ class Album
 
   def Album.sort_by_title()
     return Album.all.sort_by{|album| album.title}
+  end
+
+  def stock_level
+    return "Stock level: Low" if @stock <= 5
+    return "Stock level: Medium" if @stock <= 10
+    return "Stock level: High" if @stock >=10
   end
 
 end

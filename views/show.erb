@@ -1,0 +1,16 @@
+<h2>Albums for <%= @artist.name %></h2>
+
+<p></p>
+
+
+
+<div class="grid">
+  <% for album in @albums do %>
+    <div class="grid-item">
+    <p><%= album.title %></p>
+    <p><%= album.genre %></p>
+    <p><%= album.stock_level %></p>
+    <p><img src="<%= album.artwork %>" alt="album-logo" id="album_art"></p>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,10 @@
+<h2>Here's a list of all the artists</h2>
+
+<div class="index">
+<% for artist in @artists do %>
+  <hr>
+  <p>Artist: <%= artist.name() %></p>
+  <p><a href="/records/<%= artist.id %>">View albums</a></p>
+<% end %>
+<hr>
+</div>
