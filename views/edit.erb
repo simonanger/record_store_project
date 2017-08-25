@@ -1,0 +1,9 @@
+<h1>Edit artist info</h1>
+
+<form action="/artist/<%= @artist.id  %>" method="post">
+  <label for="artist-name-field">Artist name:</label>
+  <input type="text" name="name" id="artist-name-field" value="<%= @artist.name %>">
+
+  <input type="submit" value="Save info">
+
+</form>

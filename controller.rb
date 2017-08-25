@@ -13,8 +13,8 @@ get '/artist/all' do
   erb(:index)
 end
 
-get '/artist/new_artist' do
-  erb(:new_artist)
+get '/artist/new' do
+  erb(:new)
 end
 
 post '/artist' do
@@ -40,4 +40,15 @@ get '/artist/:id' do
   @artist = Artist.find(params[:id])
   @albums = Artist.albums(@artist.id)
   erb(:show)
+end
+
+get '/artist/:id/edit' do
+  @artist = Artist.find(params[:id])
+  erb(:edit)
+end
+
+post '/artist/:id' do
+  @artist = Artist.new(params)
+  @artist.update()
+  redirect to "/artist/all"
 end
