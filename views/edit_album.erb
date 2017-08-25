@@ -1,0 +1,15 @@
+<h1>Edit album info</h1>
+
+<form action="/artist/<%= @album.artist_id %>">
+  <label for="album-title-field">Album title: </label>
+  <input type="text" name="title" id="album-title-field" value="<%= @album.title %>">
+  <label for="album-genre-field">Genre: </label>
+  <input type="text" name="genre" value="<%= @album.genre %>">
+  <label for="album-stock-field">Stock: </label>
+  <input type="number" name="stock" value="<%= @album.stock %>">
+  <label for="album-artwork-field">Artwork link: </label>
+  <input type="text" name="artwork" value="<%=  @album.artwork %>">
+
+  <input type="submit" value="Save info">
+
+</form>

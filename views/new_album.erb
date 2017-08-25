@@ -1,0 +1,21 @@
+<h1>New Album</h1>
+
+<form action="/album" method="post">
+  <label for="artist-name-field">Artist name: </label>
+  <select name="house_id" id="house-select">
+  <% @artists.each do |artist| %>
+    <option value= <%=artist.id%>> <%=artist.name%></option>
+  <% end %>
+  </select>
+
+  <label for="album-title-field">Album title: </label>
+  <input type="text" name="title" id="album-title-field">
+  <label for="album-genre-field">Genre: </label>
+  <input type="text" name="genre">
+  <label for="album-stock-field">Stock: </label>
+  <input type="number" name="stock">
+  <label for="album-artwork-field">Artwork link: </label>
+  <input type="text" name="artwork">
+
+  <input type="submit" value="Submit">
+</form>

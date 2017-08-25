@@ -4,14 +4,14 @@ require_relative('./artist')
 
 class Album
 
-  attr_accessor(:id)
-  attr_reader(:title, :artwork, :genre, :stock, :artist_id )
+  attr_reader(:id)
+  attr_accessor(:title, :artwork, :genre, :stock, :artist_id )
 
-  def initialize( params )
+  def initialize(params)
     @id = params['id'].to_i if params['id']
-    @title = params['title']
+    @title = params['title'].first.upcase
     @artwork = params['artwork']
-    @genre = params['genre']
+    @genre = params['genre'].upcase
     @stock = params['stock'].to_i()
     @artist_id = params['artist_id']
   end
@@ -66,8 +66,22 @@ class Album
 
   def delete()
     sql = "DELETE FROM albums
-    WHERE id = $1"
+    WHERE id = $;1"
     values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
+  def self.delete_all()
+    sql = 'DELETE FROM albums'
+    SqlRunner.run(sql)
+  end
+
+  def update()
+    sql = "UPDATE albums SET (
+    title, artwork, genre, stock) =
+    ($1, $2, $3, $4)
+    WHERE id = $5;"
+    values = [@title, @artwork, @genre, @stock, @id]
     SqlRunner.run(sql, values)
   end
 

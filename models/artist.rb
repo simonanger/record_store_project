@@ -9,7 +9,7 @@ class Artist
 
   def initialize(params)
     @id = params['id'].to_i if params['id']
-    @name = params['name']
+    @name = params['name'].first.upcase
   end
 
   def self.map_items(hash)
@@ -64,5 +64,10 @@ class Artist
     WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
+  end
+
+  def self.delete_all()
+    sql = 'DELETE FROM artists'
+    SqlRunner.run(sql)
   end
 end

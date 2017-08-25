@@ -2,6 +2,9 @@ require_relative('../models/artist')
 require_relative('../models/album')
 require ('pry')
 
+Album.delete_all
+Artist.delete_all
+
 artist1 = Artist.new({'name' => 'King Witch', 'logo' => 'logo.url'})
 artist2 = Artist.new({'name' => 'Dune', 'logo' => 'logo.url'})
 artist3 = Artist.new({'name' => 'Converge', 'logo' => 'logo.url'})

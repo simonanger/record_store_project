@@ -6,6 +6,9 @@
     <p><%= album.title %></p>
     <p><%= album.genre %></p>
     <p><%= album.stock_level %></p>
+    <form action="/album/<%= album.id %>/edit">
+      <input type="submit" value="Edit Album Info">
+    </form>
     <form action="/album/<%= album.id%>/delete" method="post">
       <input type="submit" value="Delete Album">
     </form>
