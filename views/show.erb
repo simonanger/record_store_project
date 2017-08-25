@@ -1,10 +1,12 @@
 <h2>Albums for <%= @artist.name %></h2>
 
+<p><a href="/album/new">Click here to register new album</a></p>
+
 <div class="grid">
   <% for album in @albums do %>
     <div class="grid-item">
-    <p><%= album.title %></p>
-    <p><%= album.genre %></p>
+    <p>Title: <%= album.title %></p>
+    <p>Genre: <%= album.genre %></p>
     <p><%= album.stock_level %></p>
     <form action="/album/<%= album.id %>/edit">
       <input type="submit" value="Edit Album Info">

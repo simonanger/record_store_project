@@ -2,7 +2,7 @@
 
 <form action="/album" method="post">
   <label for="artist-name-field">Artist name: </label>
-  <select name="artist_id" id="house-select">
+  <select name="artist_id" id="artist-select">
   <% @artists.each do |artist| %>
     <option name="artist_id" value= <%=artist.id%>> <%=artist.name%></option>
   <% end %>
