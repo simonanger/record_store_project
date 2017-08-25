@@ -64,4 +64,11 @@ class Album
     return "Stock level: High" if @stock >=10
   end
 
+  def delete()
+    sql = "DELETE FROM albums
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
 end

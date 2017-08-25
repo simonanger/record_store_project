@@ -2,9 +2,14 @@
 
 <div class="index">
 <% for artist in @artists do %>
-  <hr>
-  <p>Artist: <%= artist.name() %></p>
-  <p><a href="/records/<%= artist.id %>">View albums</a></p>
-<% end %>
 <hr>
+  <p>Artist: <%= artist.name() %></p>
+  <p><a href="/artist/<%= artist.id %>">View albums</a></p>
+
+  <form action="/artist/<%= artist.id%>/delete" method="post">
+    <input type="submit" value="Delete Artist">
+  </form>
+
+<% end %>
 </div>
+<hr class="index">

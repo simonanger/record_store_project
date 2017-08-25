@@ -2,6 +2,7 @@ body {
   background-color: black;
   color: white;
   text-align: center;
+  font-size: 20px;
 }
 
 #album_art {
@@ -10,8 +11,17 @@ body {
 }
 
 #banner {
-  width: 900px;
-  height: 200px;
+  width: 90%;
+  height: 230px;
+  border:1px solid #;
+  -webkit-border-radius: 0px 0px 30px 30px;
+  -moz-border-radius: 0px 0px 30px 30px;
+  border-radius: 0px 0px 30px 30px;
+}
+
+#store {
+  width: 40%;
+  height: auto;
 }
 
 
@@ -20,7 +30,7 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 10px 100px 10px 100px
+  margin: 10px 200px 10px 200px;
 }
 
 .grid-item{
@@ -28,11 +38,16 @@ body {
 }
 
 .index {
-  margin: 10px 100px 10px 100px,
+  margin: 10px 200px 10px 200px;
+
 }
 
-.index a {
-  
+a {
+  color: white;
+}
+
+a:visited {
+  color: white;
 }
 
 

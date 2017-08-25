@@ -4,26 +4,39 @@ require_relative('./models/album')
 require_relative('./models/artist')
 also_reload('.models/*')
 
-get '/records' do
+get '/artist' do
   erb(:home)
 end
 
-get '/records/all' do
+get '/artist/all' do
   @artists = Artist.all
   erb(:index)
 end
 
-get '/records/new' do
-  erb(:new)
+get '/artist/new_artist' do
+  erb(:new_artist)
 end
 
-post '/records' do
+post '/artist' do
   @artist = Artist.new(params)
   @artist.save()
-  redirect to '/records/all'
+  redirect to '/artist/all'
 end
 
-get '/records/:id' do
+post '/artist/:id/delete' do
+  @artist = Artist.find(params[:id])
+  @artist.delete()
+  redirect to '/artist/all'
+end
+
+post '/album/:id/delete' do
+  @album = Album.find(params[:id])
+  artist_id = @album.artist_id
+  @album.delete()
+  redirect to "/artist/#{artist_id}"
+end
+
+get '/artist/:id' do
   @artist = Artist.find(params[:id])
   @albums = Artist.albums(@artist.id)
   erb(:show)
