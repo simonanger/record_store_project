@@ -59,6 +59,7 @@ class Album
   end
 
   def stock_level
+    return "Out of stock" if @stock == 0
     return "Stock level: Low" if @stock <= 5
     return "Stock level: Medium" if @stock <= 10
     return "Stock level: High" if @stock >=10

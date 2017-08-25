@@ -1,3 +1,7 @@
-<h1>The album information has been updated!</h1>
+<h2><%= @album.title %> has been updated with the following details;</h2>
+
+<p>Genre: <%= @album.genre%></p>
+<p>Stock: <%= @album.stock%></p>
+<p><img src="<%= @album.artwork %>" alt="album-artwork" id="album_art"></p>
 
 <p><a href="/artist/all">Click here to see the artist list</a></p>
