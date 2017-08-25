@@ -1,5 +1,6 @@
 require('pg')
 require_relative('../db/sql_runner')
+require_relative('./album.rb')
 
 class Artist
 
@@ -10,6 +11,10 @@ class Artist
     @id = params['id'].to_i if params['id']
     @name = params['name']
     @logo = params['logo']
+  end
+
+  def self.map_items(hash)
+    return hash.map { |hash| Artist.new(hash) }
   end
 
   def save()
@@ -23,5 +28,27 @@ class Artist
     @id = result[0]['id'].to_i()
   end
 
+  def self.all()
+    sql = 'SELECT * FROM artists'
+    values = []
+    artists = SqlRunner.run(sql, values)
+    result = Artist.map_items(artists)
+    return result
+  end
+
+  def self.find(id)
+    sql = ' SELECT * FROM artists
+    WHERE id = $1'
+    values = [id]
+    result = SqlRunner.run(sql, values)
+    return Artist.new(result[0])
+  end
+
+  def albums()
+    sql = ' SELECT * FROM albums WHERE artist_id = $1'
+    values = [id]
+    result = SqlRunner.run(sql, values)
+    return Album.map_items(result)
+  end
 
 end
