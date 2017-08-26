@@ -1,0 +1,9 @@
+<div class="grid">
+  <% for album in @albums do %>
+    <div class="grid-item">
+    <p>Artist: <%= album.artist_name %></p>
+    <p>Title: <%= album.title %></p>
+    <p>Total in stock: <%= album.stock %></p>
+    </div>
+  <% end %>
+</div>

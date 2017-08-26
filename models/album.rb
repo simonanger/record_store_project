@@ -48,11 +48,19 @@ class Album
   end
 
   def artist()
-    sql = ' SELECT * FROM artists WHERE artist_id = $1;'
-    values = [id]
+    sql = ' SELECT * FROM artists WHERE id = $1;'
+    values = [@artist_id]
     result = SqlRunner.run(sql, values)
     return Artist.map_items(result)
   end
+
+  def artist_name()
+    sql = ' SELECT * FROM artists WHERE id = $1;'
+    values = [@artist_id]
+    result = SqlRunner.run(sql, values)
+    return Artist.map_items(result).first.name
+  end
+
 
   def Album.sort_by_title()
     return Album.all.sort_by{|album| album.title}
