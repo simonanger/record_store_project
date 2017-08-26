@@ -13,5 +13,7 @@ CREATE TABLE albums(
   artwork TEXT,
   genre VARCHAR(255),
   stock INT,
+  cost INT,
+  sale INT,
   artist_id INT REFERENCES artists(id) ON DELETE CASCADE
 )

@@ -8,6 +8,8 @@
     <p>Title: <%= album.title %></p>
     <p>Genre: <%= album.genre %></p>
     <p><%= album.stock_level %></p>
+    <p>Cost: £<%= album.cost %></p>
+    <p>Sale price: £<%= album.sale %></p>
     <form action="/album/<%= album.id %>/edit">
       <input type="submit" value="Edit Album Info">
     </form>

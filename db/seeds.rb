@@ -17,31 +17,43 @@ album1 = Album.new({'title' => 'Shoulders of Giants',
   'artwork' => '/shoulders.jpeg',
   'genre' => 'Metal',
   'stock' => '3',
+  'cost' => '2',
+  'sale' => '3',
   'artist_id' => artist1.id})
 album2 = Album.new({'title' => 'Under the Mountain',
   'artwork' => '/under.jpeg',
   'genre' => 'Metal',
   'stock' => '10',
+  'cost' => '5',
+  'sale' => '10',
   'artist_id' => artist1.id})
 album3 = Album.new({'title' => 'Progenitor',
   'artwork' => '/progenitor.jpeg',
   'genre' => 'Metal',
   'stock' => '5',
+  'cost' => '3',
+  'sale' => '5',
   'artist_id' => artist2.id})
 album4 = Album.new({'title' => 'Aurora Majesty',
   'artwork' => '/aurora.jpeg',
   'genre' => 'Metal',
   'stock' => '1',
+  'cost' => '2',
+  'sale' => '3',
   'artist_id' => artist2.id})
 album5 = Album.new({'title' => 'Jane Doe',
   'artwork' => '/jane.jpeg',
   'genre' => 'Hardcore',
   'stock' => '7',
+  'cost' => '5',
+  'sale' => '10',
   'artist_id' => artist3.id})
 album6 = Album.new({'title' => 'You Fail Me',
   'artwork' => '/fail.jpeg',
   'genre' => 'Hardcore',
   'stock' => '15',
+  'cost' => '7',
+  'sale' => '15',
   'artist_id' => artist3.id})
 
   album1.save
