@@ -1,0 +1,10 @@
+<% if @artist.present? %>
+<table>
+  <td>Artist Name</td>
+  <% @artists.each do |artist| %>
+  <tr><td><a href="/artists/<%= artists.id %>"><%=h artist.name %></a>   </td>
+<% end %>
+<% else %>
+<p>There are no Products containing the term(s) <%= params[:search] %>.</p>
+<% end %>
+</table>

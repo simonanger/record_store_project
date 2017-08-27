@@ -9,12 +9,12 @@ get '/artist' do
 end
 
 get '/artist/all' do
-  @artists = Artist.all
+  @artists = Artist.sort_by_name
   erb(:index)
 end
 
 get '/artist/inventory' do
-  @artists = Artist.all
+  @artists = Artist.sort_by_name
   @albums = Album.all
   erb(:inventory)
 end
@@ -36,6 +36,20 @@ end
 
 post '/album' do
   @albums = Album.new(params)
+  @albums.save()
+  redirect to '/artist/all'
+end
+
+#why?!!??!
+get '/artist/profile' do
+  erb(:new_profile)
+end
+
+post '/artist/profile' do
+  @artist = Artist.new(params)
+  @artist.save()
+  @albums = Album.new(params)
+  @albums.artist_id = @artist.id
   @albums.save()
   redirect to '/artist/all'
 end

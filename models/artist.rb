@@ -50,6 +50,10 @@ class Artist
     return Album.map_items(result)
   end
 
+  def Artist.sort_by_name()
+    return Artist.all.sort_by{|artist| artist.name}
+  end
+
   def update()
     sql = 'UPDATE artists SET (
     name) = (
@@ -70,4 +74,9 @@ class Artist
     sql = 'DELETE FROM artists'
     SqlRunner.run(sql)
   end
+
+  def self.search(search)
+    where("name ilike ?", "#{search}")
+  end
+
 end
