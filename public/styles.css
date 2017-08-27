@@ -1,8 +1,11 @@
+
+
 body {
+  font-family: 'Sedgwick Ave Display';
   background-color: black;
   color: white;
   text-align: center;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 #album_art {
@@ -31,6 +34,16 @@ body {
 
 
 .grid {
+  border: 1px solid white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 10px 200px 10px 200px;
+}
+
+.grid1 {
+  font-family: sans-serif;
+  font-size: 18px;
   border: 1px solid white;
   display: flex;
   flex-direction: row;
