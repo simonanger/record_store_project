@@ -1,12 +1,20 @@
-<h2>Full Inventory</h2>
+<h2 id="title">Full Inventory</h2>
 
-<div class="grid1">
-  <% for album in @albums do %>
-    <div class="grid-item">
-    <p>Artist: <%= album.artist_name %></p>
-    <p>Title: <%= album.title %></p>
-    <p>Total in stock: <%= album.stock %></p>
-    <p>Profit per album: £ <%= album.profit %>
-    </div>
+<div class="grid2">
+  <table>
+    <tr class="table_data">
+      <th>Artist</th>
+      <th>Title</th>
+      <th>Total in stock</th>
+      <th>Profit per album</th>
+    </tr>
+    <% for album in @albums do %>
+    <tr>
+      <td><%= album.artist_name %></td>
+      <td><%= album.title %></td>
+      <td><%= album.stock %></td>
+      <td>£<%= album.profit %></td>
+    </tr>
   <% end %>
+  </table>
 </div>
