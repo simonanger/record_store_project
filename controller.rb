@@ -40,7 +40,6 @@ post '/album' do
   redirect to '/artist/all'
 end
 
-#why?!!??!
 get '/artist/profile' do
   erb(:new_profile)
 end
