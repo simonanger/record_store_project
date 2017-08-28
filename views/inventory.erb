@@ -14,6 +14,7 @@
       <th>Total in stock</th>
       <th>Profit per album</th>
       <th class="sold-today-cell">Sold today</th>
+      <th>Total sold</th>
       <th class="order-more-cell">Order more</th>
     </tr>
     <% for album in @albums do %>
@@ -26,6 +27,7 @@
         <label for="album-sold-field"></label>
         <input type="number" name="sold[<%= album.id%>]" form="inventory_form">
       </td>
+      <td><%= album.sold %></td>
       <td class="order-more-cell">
         <label for="order-more-field"></label>
         <input type="number" name="bought[<%= album.id%>]" form="inventory_form">
