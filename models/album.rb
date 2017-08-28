@@ -50,8 +50,12 @@ class Album
     return Album.new(result[0])
   end
 ###HERE
-  def self.find_by_title()
-    sql = ' SELECT * FROM album'
+  def self.find_by_title(title)
+    sql = ' SELECT * FROM album WHERE title = $1'
+    values = [title]
+    result = SqlRunner.run(sql, values)
+    album_by_title = Album.new(result) if !result.nil?
+    return album_by_title
   end
 
   def artist()
