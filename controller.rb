@@ -18,7 +18,7 @@ get '/artist/inventory' do
   @albums = Album.all.sort_by {|album| album.artist_name}
   erb(:inventory)
 end
-#sort by album using sort by
+
 post '/artist/inventory' do
   all_album_ids = params["sold"].keys
   sold_album_ids = all_album_ids.select { |album_id| params["sold"][album_id] != "" }
