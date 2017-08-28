@@ -44,8 +44,9 @@ get '/artist/new' do
 end
 
 post '/artist' do
+  names = Artist.names
   @artist = Artist.new(params)
-  @artist.save()
+  @artist.save() unless names.include? @artist.name
   redirect to '/artist/all'
 end
 
@@ -67,8 +68,9 @@ get '/artist/profile' do
 end
 
 post '/artist/profile' do
+  names = Artist.names
   @artist = Artist.new(params)
-  @artist.save()
+  @artist.save() unless names.include? @artist.name
   @albums = Album.new(params)
   @albums.artist_id = @artist.id
   @albums.save()

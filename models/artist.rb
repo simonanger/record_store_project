@@ -54,6 +54,14 @@ class Artist
     return Artist.all.sort_by{|artist| artist.name}
   end
 
+  def self.names()
+    sql = 'SELECT * FROM artists;'
+    artist_array = SqlRunner.run(sql, [])
+    artists = Artist.all
+    names = artists.map {|artists| artists.name}
+    return names
+  end
+
   def update()
     sql = 'UPDATE artists SET (
     name) = (
