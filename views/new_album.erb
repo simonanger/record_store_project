@@ -6,7 +6,11 @@
     <select name="artist_id" id="artist-select">
 
       <% @artists.each do |artist| %>
+      <%if @albums.artist_id == artist.id %>
+        <option name="artist_id" value=<%=artist.id%>>selected<%= artist.name %></option>
+      <% else %>
         <option name="artist_id" value= <%=artist.id%>> <%=artist.name%></option>
+      <% end %>
       <% end %>
 
       </select>

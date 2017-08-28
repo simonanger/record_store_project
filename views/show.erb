@@ -1,6 +1,6 @@
 <h2 id="title">Albums for <%= @artist.name %></h2>
 
-<p><a href="/album/new">Click here to register new album</a></p>
+<p><a href="/artist/<%= @artist.id %>/new">Click here to register new album</a></p>
 
 <div class="grid">
   <% for album in @albums do %>

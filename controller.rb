@@ -59,6 +59,19 @@ post '/album' do
   @albums.save()
   redirect to '/artist/all'
 end
+#dkdkddkdk
+get '/artist/:id/new' do
+  @artists = Artist.all
+  @album = Album.find(params[:id])
+  erb(:new_album_id)
+end
+
+post '/artist/:artist_id/new' do
+  @album = Album.new(params)
+  artist_id = @album.artist_id
+  @album.save
+  erb(:update)
+end
 
 get '/artist/profile' do
   erb(:new_profile)
