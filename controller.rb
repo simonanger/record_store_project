@@ -2,6 +2,7 @@ require('sinatra')
 require('sinatra/contrib/all') if development?
 require_relative('./models/album')
 require_relative('./models/artist')
+require('pry')
 also_reload('.models/*')
 
 get '/artist' do
@@ -14,9 +15,20 @@ get '/artist/all' do
 end
 
 get '/artist/inventory' do
-  @artists = Artist.sort_by_name
   @albums = Album.all
   erb(:inventory)
+end
+#sort by album using sort by
+post '/artist/inventory' do
+  all_album_ids = params["sold"].keys
+  sold_album_ids = all_album_ids.select { |album_id| params["sold"][album_id] != "" }
+
+  for sold_album_id in sold_album_ids
+    album = Album.find(sold_album_id.to_i)
+    album.stock_update(params["sold"][sold_album_id].to_i)
+  end
+
+  redirect to '/artist/inventory'
 end
 
 get '/artist/new' do
