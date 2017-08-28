@@ -35,7 +35,7 @@ class Album
   end
 
   def self.all()
-    sql = 'SELECT * FROM albums;'
+    sql = 'SELECT * FROM albums ORDER BY title;'
     values = []
     albums = SqlRunner.run(sql, values)
     result = Album.map_items(albums)
@@ -100,6 +100,11 @@ class Album
   def stock_update(number_sold)
     @stock -= number_sold
     @sold += number_sold
+    self.update
+  end
+
+  def stock_add(number_bought)
+    @stock += number_bought
     self.update
   end
 

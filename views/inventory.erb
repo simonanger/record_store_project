@@ -1,6 +1,6 @@
 <h2 id="title">Full Inventory</h2>
 
-<input type="submit" value="Update todays sales" form="inventory_form">
+<input type="submit" value="Update stock" form="inventory_form">
 
 <div class="grid2">
 
@@ -14,6 +14,7 @@
       <th>Total in stock</th>
       <th>Profit per album</th>
       <th class="sold-today-cell">Sold today</th>
+      <th class="order-more-cell">Order more</th>
     </tr>
     <% for album in @albums do %>
     <tr>
@@ -24,6 +25,10 @@
       <td class="sold-today-cell">
         <label for="album-sold-field"></label>
         <input type="number" name="sold[<%= album.id%>]" form="inventory_form">
+      </td>
+      <td class="order-more-cell">
+        <label for="order-more-field"></label>
+        <input type="number" name="bought[<%= album.id%>]" form="inventory_form">
       </td>
     </tr>
   <% end %>
