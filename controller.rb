@@ -6,17 +6,17 @@ require('pry')
 also_reload('.models/*')
 
 get '/artist' do
-  erb(:home)
+  erb(:'artist/home')
 end
 
 get '/artist/all' do
   @artists = Artist.sort_by_name
-  erb(:index)
+  erb(:'artist/index')
 end
 
 get '/artist/inventory' do
   @albums = Album.all.sort_by {|album| album.artist_name}
-  erb(:inventory)
+  erb(:'artist/inventory')
 end
 
 post '/artist/inventory' do
@@ -40,7 +40,7 @@ post '/artist/inventory' do
 end
 
 get '/artist/new' do
-  erb(:new_artist)
+  erb(:'artist/new_artist')
 end
 
 post '/artist' do
@@ -51,7 +51,7 @@ end
 
 get '/album/new' do
   @artists = Artist.all
-  erb(:new_album)
+  erb(:'album/new_album')
 end
 
 post '/album' do
@@ -63,18 +63,18 @@ end
 get '/artist/:id/new' do
   @artists = Artist.all
   @album = Album.find(params[:id])
-  erb(:new_album_id)
+  erb(:'album/new_album_id')
 end
 
 post '/artist/:artist_id/new' do
   @album = Album.new(params)
   artist_id = @album.artist_id
   @album.save
-  erb(:update)
+  erb(:'artist/update')
 end
 
 get '/artist/profile' do
-  erb(:new_profile)
+  erb(:'artist/new_profile')
 end
 
 post '/artist/profile' do
@@ -102,12 +102,12 @@ end
 get '/artist/:id' do
   @artist = Artist.find(params[:id])
   @albums = Artist.albums(@artist.id)
-  erb(:show)
+  erb(:'artist/show')
 end
 
 get '/artist/:id/edit' do
   @artist = Artist.find(params[:id])
-  erb(:edit_artist)
+  erb(:'artist/edit_artist')
 end
 
 post '/artist/:id' do
@@ -119,12 +119,12 @@ end
 get '/album/:id/edit' do
   @artists = Artist.all
   @album = Album.find(params[:id])
-  erb(:edit_album)
+  erb(:'album/edit_album')
 end
 
 post '/album/:id' do
   @album = Album.new(params)
   artist_id = @album.artist_id
   @album.update()
-  erb(:update)
+  erb(:'artist/update')
 end
