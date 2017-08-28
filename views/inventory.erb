@@ -10,18 +10,18 @@
   <table>
     <tr class="table_data">
       <th>Artist</th>
-      <th>Title</th>
+      <th class="album-title-cell">Title</th>
       <th>Total in stock</th>
       <th>Profit per album</th>
-      <th>Sold today</th>
+      <th class="sold-today-cell">Sold today</th>
     </tr>
     <% for album in @albums do %>
     <tr>
       <td><%= album.artist_name %></td>
-      <td><%= album.title %></td>
+      <td class="album-title-cell"><%= album.title %></td>
       <td><%= album.stock %></td>
       <td>£<%= album.profit %></td>
-      <td>
+      <td class="sold-today-cell">
         <label for="album-sold-field"></label>
         <input type="number" name="sold[<%= album.id%>]" form="inventory_form">
       </td>

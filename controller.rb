@@ -15,7 +15,7 @@ get '/artist/all' do
 end
 
 get '/artist/inventory' do
-  @albums = Album.all
+  @albums = Album.all.sort_by {|album| album.artist_name}
   erb(:inventory)
 end
 #sort by album using sort by

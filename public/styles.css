@@ -73,6 +73,22 @@ body {
   margin-right: auto;
 }
 
+tr th, tr td {
+  width: 19%;
+}
+
+.album-title-cell {
+  width: 27%;
+}
+
+.sold-today-cell {
+  width: 11%;
+}
+
+.sold-today-cell * {
+  width: 90%;
+}
+
 .index {
   margin: 10px 200px 10px 200px;
   font-size: 18px;
