@@ -2,7 +2,7 @@
 
 <form action="/artist/profile" method="post">
   <label for="name-field">Artist name: </label>
-  <input type="text" name="name" id="name">
+  <input type="text" name="name" id="name" list="artists">
   <label for="album-title-field">Album title: </label>
   <input type="text" name="title" id="album-title-field">
   <label for="album-genre-field">Genre: </label>
@@ -18,4 +18,12 @@
   <label for="album-artwork-field">Artwork link: </label>
   <input type="text" name="artwork">
   <input type="submit" value="Submit">
+
+  <% @artists = Artist.all %>
+    <datalist id="artists">
+      <% for artist in @artists do %>
+      <option value="<%= artist.name %>">
+        <% end %>
+    </datalist>
+
 </form>
