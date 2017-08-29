@@ -2,14 +2,12 @@
 
 <p><a href="/artist/profile">Click here to set up a new artist & album</a></p>
 <p><a href="/artist/all">Click here to go back to all artists</a>
-  <br>
+<br>
 
 <input type="submit" value="Update stock" form="inventory_form" id="inventory-button">
 
 <div class="grid2">
-
 <form id="inventory_form" action="/artist/inventory" method="post">
-
 
   <table border="1">
     <tr class="table_data">
@@ -21,29 +19,26 @@
       <th class="total-sold-cell">Total sold</th>
       <th class="sold-today-cell">Sold today</th>
     </tr>
+
     <% for album in @albums do %>
-    <tr>
-      <td><a  href="/artist/<%= album.artist_id %>"><%= album.artist_name %></td></a>
-      <td class="album-title-cell"><%= album.title %></td>
-      <td><%= album.stock %></td>
-      <td>£<%= album.profit %></td>
-      <td class="order-more-cell">
-        <label for="order-more-field"></label>
-        <input type="number" name="bought[<%= album.id%>]" form="inventory_form">
-      </td>
+      <tr>
+        <td><a  href="/artist/<%= album.artist_id %>"><%= album.artist_name %></td></a>
+        <td class="album-title-cell"><%= album.title %></td>
+        <td><%= album.stock %></td>
+        <td>£<%= album.profit %></td>
+        <td class="order-more-cell">
+          <label for="order-more-field"></label>
+          <input type="number" name="bought[<%= album.id%>]" form="inventory_form">
+        </td>
 
-      <td class="total-sold-cell"><%= album.sold %></td>
-
-
-      <td class="sold-today-cell">
-        <label for="album-sold-field"></label>
-        <input type="number" name="sold[<%= album.id%>]" form="inventory_form">
-      </td>
-
-    </tr>
-  <% end %>
+        <td class="total-sold-cell"><%= album.sold %></td>
+        <td class="sold-today-cell">
+          
+          <label for="album-sold-field"></label>
+          <input type="number" name="sold[<%= album.id%>]" form="inventory_form">
+        </td>
+      </tr>
+    <% end %>
   </table>
 </form>
-
-
 </div>

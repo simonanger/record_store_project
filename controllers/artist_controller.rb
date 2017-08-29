@@ -31,20 +31,17 @@ end
 post '/artist/inventory' do
   all_album_ids = params["sold"].keys
   sold_album_ids = all_album_ids.select { |album_id| params["sold"][album_id] != "" }
-
   for sold_album_id in sold_album_ids
     album = Album.find(sold_album_id.to_i)
     album.stock_update(params["sold"][sold_album_id].to_i)
   end
-
+  
   all_album_ids2 = params["bought"].keys
   bought_album_ids = all_album_ids2.select { |album| params["bought"][album] != "" }
-
   for bought_album_id in bought_album_ids
     album = Album.find(bought_album_id.to_i)
     album.stock_add(params["bought"][bought_album_id].to_i)
   end
-
   redirect to '/artist/inventory'
 end
 

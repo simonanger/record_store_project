@@ -6,26 +6,31 @@
     <select name="artist_id" id="artist-select">
 
       <% @artists.each do |artist| %>
-      <%if @albums.artist_id == artist.id %>
-        <option name="artist_id" value=<%=artist.id%>>selected<%= artist.name %></option>
-      <% else %>
-        <option name="artist_id" value= <%=artist.id%>> <%=artist.name%></option>
-      <% end %>
+        <%if @albums.artist_id == artist.id %>
+          <option name="artist_id" value=<%=artist.id%>>selected<%= artist.name %></option>
+        <% else %>
+          <option name="artist_id" value= <%=artist.id%>> <%=artist.name%></option>
+        <% end %>
       <% end %>
 
       </select>
 
       <label for="album-title-field">Album title: </label>
       <input type="text" name="title" id="album-title-field">
+
       <label for="album-genre-field">Genre: </label>
       <input type="text" name="genre">
+
       <label for="album-stock-field">Stock: </label>
       <input type="number" name="stock">
       <br>
+
       <label for="album-stock-field">Cost: </label>
       <input type="number" name="cost">
+
       <label for="album-stock-field">Sale Price: </label>
       <input type="number" name="sale">
+      
       <label for="album-artwork-field">Artwork link: </label>
       <input type="text" name="artwork">
 

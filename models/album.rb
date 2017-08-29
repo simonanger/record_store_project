@@ -50,8 +50,6 @@ class Album
     return Album.new(result[0])
   end
 
-
-###HERE
   def self.find_by_title(title)
     sql = ' SELECT * FROM albums WHERE title = $1'
     values = [title]
@@ -63,7 +61,6 @@ class Album
     album_by_title = Album.new(album_hash)
     return album_by_title
   end
-
 
   def artist()
     sql = ' SELECT * FROM artists WHERE id = $1;'
@@ -78,7 +75,6 @@ class Album
     result = SqlRunner.run(sql, values)
     return Artist.map_items(result).first.name
   end
-
 
   def Album.sort_by_title()
     return Album.all.sort_by{|album| album.title}
@@ -127,4 +123,5 @@ class Album
     profit = @sale - @cost
     return profit
   end
+  
 end

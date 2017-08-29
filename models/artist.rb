@@ -49,7 +49,7 @@ class Artist
     result = SqlRunner.run(sql, values)
 
     return [] if result.to_a.length == 0
-
+    
     artist_hash = result[0]
     artist_by_name = Artist.new(artist_hash)
     return artist_by_name

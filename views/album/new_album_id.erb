@@ -4,19 +4,23 @@
   <form action="/artist/<%= @album.id %>/new" method="post">
     <label for="album-title-field">Album title: </label>
     <input type="text" name="title" id="album-title-field">
+
     <label for="album-genre-field">Genre: </label>
     <input type="text" name="genre">
+
     <label for="album-stock-field">Stock: </label>
     <input type="number" name="stock">
     <br>
+
     <label for="album-cost-field">Cost: </label>
     <input type="number" name="cost">
+
     <label for="album-sale-field">Sale Price: </label>
     <input type="number" name="sale">
+
     <label for="album-artwork-field">Artwork link: </label>
     <input type="text" name="artwork">
-
+    
     <input type="submit" value="Save info">
-
   </form>
 </div>
