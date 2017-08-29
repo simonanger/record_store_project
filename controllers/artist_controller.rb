@@ -35,7 +35,7 @@ post '/artist/inventory' do
     album = Album.find(sold_album_id.to_i)
     album.stock_update(params["sold"][sold_album_id].to_i)
   end
-  
+
   all_album_ids2 = params["bought"].keys
   bought_album_ids = all_album_ids2.select { |album| params["bought"][album] != "" }
   for bought_album_id in bought_album_ids
@@ -75,11 +75,18 @@ end
 
 post '/artist/profile' do
   names = Artist.names
-  @artist = Artist.new(params)
-  @artist.save() unless names.include? @artist.name
-  @albums = Album.new(params)
-  @albums.artist_id = @artist.id
-  @albums.save()
+  new_artist = Artist.new(params)
+  new_artist.save() unless names.include? new_artist.name
+  album = Album.new(params)
+
+  if(names.include?(new_artist.name))
+    existing_artist = Artist.find_by_name(new_artist.name)
+    album.artist_id = existing_artist.id
+  else
+    album.artist_id = new_artist.id
+  end
+
+  album.save()
   redirect to '/artist/all'
 end
 

@@ -65,7 +65,7 @@ album6 = Album.new({'title' => 'You Fail Me',
   'sale' => '15',
   'sold' => '5',
   'artist_id' => artist3.id})
-album7 = Album.new({'title' => "AmeriKKa's Most Wanted",
+album7 = Album.new({'title' => "AmeriKKKa's Most Wanted",
   'artwork' => '/album_artwork/amw.jpeg',
   'genre' => 'Rap',
   'stock' => '10',
