@@ -1,5 +1,9 @@
 <h2 id="title">Full Inventory</h2>
 
+<p><a href="/artist/profile">Click here to set up a new artist & album</a></p>
+<p><a href="/artist/all">Click here to go back to all artists</a>
+  <br>
+
 <input type="submit" value="Update stock" form="inventory_form" id="inventory-button">
 
 <div class="grid2">
@@ -19,7 +23,7 @@
     </tr>
     <% for album in @albums do %>
     <tr>
-      <td><%= album.artist_name %></td>
+      <td><a  href="/artist/<%= album.artist_id %>"><%= album.artist_name %></td></a>
       <td class="album-title-cell"><%= album.title %></td>
       <td><%= album.stock %></td>
       <td>£<%= album.profit %></td>
@@ -27,7 +31,7 @@
         <label for="order-more-field"></label>
         <input type="number" name="bought[<%= album.id%>]" form="inventory_form">
       </td>
-      
+
       <td class="total-sold-cell"><%= album.sold %></td>
 
 
