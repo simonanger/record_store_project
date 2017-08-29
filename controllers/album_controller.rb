@@ -16,6 +16,12 @@ post '/album' do
   redirect to '/artist/all'
 end
 
+
+post '/album/artist_search' do
+  found = Album.find_by_title(params["title"])
+  redirect to "/artist/#{found.artist_id}"
+end
+
 post '/album/:id/delete' do
   @album = Album.find(params[:id])
   artist_id = @album.artist_id

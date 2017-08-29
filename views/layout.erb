@@ -13,6 +13,21 @@
       <source src="/full_moon_king.mp3" type="audio/mpeg">
     </audio>
 
+    <form action="/album/artist_search" method="post">
+
+        <label for="album-search-by-title">Search</label>
+        <input type="text" name="title" id="album-search-by-title" list="albums">
+        <input type="submit"value="Search">
+
+        <% @albums = Album.all %>
+        <datalist id="albums">
+          <% for album in @albums do %>
+          <option value="<%= album.title %>">
+            <% end %>
+        </datalist>
+
+    </form>
+
   </head>
   <body>
 
