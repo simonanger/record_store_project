@@ -43,6 +43,18 @@ class Artist
     return Artist.new(result[0])
   end
 
+  def self.find_by_name(name)
+    sql = ' SELECT * FROM artists WHERE name = $1'
+    values = [name]
+    result = SqlRunner.run(sql, values)
+
+    return [] if result.to_a.length == 0
+
+    artist_hash = result[0]
+    artist_by_name = Artist.new(artist_hash)
+    return artist_by_name
+  end
+
   def self.albums(id)
     sql = ' SELECT * FROM albums WHERE artist_id = $1;'
     values = [id]

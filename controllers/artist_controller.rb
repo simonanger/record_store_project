@@ -14,6 +14,15 @@ get '/artist/all' do
   erb(:'artist/index')
 end
 
+post '/artist/artist_search' do
+ found = Artist.find_by_name(params["name"])
+  if found == []
+    erb(:'artist/no_match')
+  else
+    redirect to "/artist/#{found.id}"
+  end
+end
+
 get '/artist/inventory' do
   @albums = Album.all.sort_by {|album| album.artist_name}
   erb(:'artist/inventory')
