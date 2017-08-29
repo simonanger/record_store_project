@@ -9,11 +9,19 @@
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css">
     <div id="header"><a href="/artist"><img id="banner" src="/banner2.jpg"/></a></div>
+
+  <div class="">
+
+
     <audio controls="controls">
       <source src="/full_moon_king.mp3" type="audio/mpeg">
     </audio>
 
-      <form action="/artist/artist_search" method="post">
+  </div>
+
+    <div class="searchbars">
+
+      <form id="artist-search" action="/artist/artist_search" method="post">
 
           <label for="artist-search-by-name"></label>
           <input type="text" name="name" id="artist-search-by-name" list="artists"
@@ -29,7 +37,7 @@
 
       </form>
 
-      <form action="/album/artist_search" method="post">
+      <form id="album-search" action="/album/artist_search" method="post">
 
           <label for="album-search-by-title"></label>
           <input type="text" name="title" id="album-search-by-title" list="albums"
@@ -44,6 +52,8 @@
           </datalist>
 
       </form>
+
+      </div>
 
   </head>
   <body>
