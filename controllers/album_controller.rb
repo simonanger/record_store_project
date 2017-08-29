@@ -18,8 +18,12 @@ end
 
 
 post '/album/artist_search' do
-  found = Album.find_by_title(params["title"])
-  redirect to "/artist/#{found.artist_id}"
+ found = Album.find_by_title(params["title"])
+  if found == []
+    erb(:'album/no_match')
+  else
+    redirect to "/artist/#{found.artist_id}"
+  end
 end
 
 post '/album/:id/delete' do
