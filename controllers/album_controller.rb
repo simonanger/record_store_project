@@ -16,7 +16,6 @@ post '/album' do
   redirect to '/artist/all'
 end
 
-
 post '/album/artist_search' do
  found = Album.find_by_title(params["title"])
   if found == []
@@ -24,6 +23,12 @@ post '/album/artist_search' do
   else
     redirect to "/artist/#{found.artist_id}"
   end
+end
+
+#genre-start
+get '/album/all_genres' do
+  @albums = Album.all
+  erb(:'album/all_genres')
 end
 
 post '/album/:id/delete' do

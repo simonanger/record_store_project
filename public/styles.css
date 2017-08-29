@@ -20,7 +20,7 @@ body {
 
 #banner {
   width: 85%;
-  height: 230px;
+  height: 185px;
   border:1px solid #;
   -webkit-border-radius: 0px 0px 30px 30px;
   -moz-border-radius: 0px 0px 30px 30px;
@@ -79,11 +79,11 @@ body {
 }
 
 tr th, tr td {
-  width: 14%;
+  width: 15%;
 }
 
 .album-title-cell {
-  width: 27%;
+  width: 25%;
 }
 
 .sold-today-cell {
@@ -95,10 +95,18 @@ tr th, tr td {
 }
 
 .order-more-cell {
-  width: 11%;
+  width: 15%;
 }
 
 .order-more-cell * {
+  width: 90%;
+}
+
+.total-sold-cell {
+  width: 7%;
+}
+
+.total-sold-cell * {
   width: 90%;
 }
 
@@ -106,7 +114,7 @@ tr th, tr td {
   border-left: 1px solid white;
   border-right: 1px solid white;
   border-bottom: 1px solid white;
-  margin: 10px 25% 10px 25%;
+  margin: 5px 25% 5px 25%;
   padding-bottom: 5px;
 }
 

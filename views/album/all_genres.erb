@@ -1,0 +1,12 @@
+<h2>Here's a list of all the genres</h2>
+
+<div class="">
+<% genres = [] %>
+<% for album in @albums do %>
+ <% genres.push(album.genre) %>
+<% end %>
+<% for genre in genres.uniq do %>
+  <p><%= genre %></p>
+<% end %>
+
+</div>
