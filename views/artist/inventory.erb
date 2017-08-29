@@ -13,9 +13,9 @@
       <th class="album-title-cell">Title</th>
       <th>Total in stock</th>
       <th>Profit per album</th>
-      <th class="sold-today-cell">Sold today</th>
-      <th class="total-sold-cell">Total sold</th>
       <th class="order-more-cell">Order more</th>
+      <th class="total-sold-cell">Total sold</th>
+      <th class="sold-today-cell">Sold today</th>
     </tr>
     <% for album in @albums do %>
     <tr>
@@ -23,15 +23,19 @@
       <td class="album-title-cell"><%= album.title %></td>
       <td><%= album.stock %></td>
       <td>£<%= album.profit %></td>
-      <td class="sold-today-cell">
-        <label for="album-sold-field"></label>
-        <input type="number" name="sold[<%= album.id%>]" form="inventory_form">
-      </td>
-      <td class="total-sold-cell"><%= album.sold %></td>
       <td class="order-more-cell">
         <label for="order-more-field"></label>
         <input type="number" name="bought[<%= album.id%>]" form="inventory_form">
       </td>
+      
+      <td class="total-sold-cell"><%= album.sold %></td>
+
+
+      <td class="sold-today-cell">
+        <label for="album-sold-field"></label>
+        <input type="number" name="sold[<%= album.id%>]" form="inventory_form">
+      </td>
+
     </tr>
   <% end %>
   </table>

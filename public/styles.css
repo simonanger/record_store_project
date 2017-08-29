@@ -87,7 +87,7 @@ tr th, tr td {
 }
 
 .sold-today-cell {
-  width: 11%;
+  width: 15%;
 }
 
 .sold-today-cell * {
@@ -95,7 +95,7 @@ tr th, tr td {
 }
 
 .order-more-cell {
-  width: 15%;
+  width: 11%;
 }
 
 .order-more-cell * {
