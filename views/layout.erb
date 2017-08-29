@@ -18,12 +18,12 @@
   </div>
 
     <div class="searchbars">
-      <form id="artist-search" action="/artist/artist_search" method="post">
+      <form id="search" action="/artist/artist_search" method="post">
 
           <label for="artist-search-by-name"></label>
           <input type="text" name="name" id="artist-search-by-name" list="artists"
             placeholder="Search artists">
-
+          <br>
           <input type="submit"value="Search">
 
           <% @artists = Artist.all %>
@@ -34,12 +34,12 @@
           </datalist>
       </form>
 
-      <form id="album-search" action="/album/artist_search" method="post">
+      <form id="search" action="/album/artist_search" method="post">
 
           <label for="album-search-by-title"></label>
           <input type="text" name="title" id="album-search-by-title" list="albums"
             placeholder="Search albums">
-
+          <br>
           <input type="submit"value="Search">
 
           <% @albums = Album.all %>

@@ -10,7 +10,7 @@
     <p>Artist: <%= artist.name() %></p>
     <p><a href="/artist/<%= artist.id %>">View albums</a></p>
 
-    <form action="/artist/<%= artist.id%>/delete" method="post">
+    <form id="create-edit-form2" action="/artist/<%= artist.id%>/delete" method="post">
       <input type="submit" value="Delete Artist">
     </form>
 

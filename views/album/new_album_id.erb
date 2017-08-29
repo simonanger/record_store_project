@@ -1,7 +1,7 @@
 <h2 id="title">New Album Details</h2>
 
 <div class="new_album">
-  <form action="/artist/<%= @album.id %>/new" method="post">
+  <form id="create-edit-form" action="/artist/<%= @album.id %>/new" method="post">
     <label for="album-title-field">Album title: </label>
     <input type="text" name="title" id="album-title-field">
 
@@ -20,7 +20,7 @@
 
     <label for="album-artwork-field">Artwork link: </label>
     <input type="text" name="artwork">
-    
+
     <input type="submit" value="Save info">
   </form>
 </div>

@@ -10,7 +10,7 @@ body {
     background-size: cover;
   color: white;
   text-align: center;
-  font-size: 25px;
+  font-size: 28px;
 }
 
 #album_art {
@@ -138,17 +138,59 @@ a:visited {
   margin-bottom: 10px;
 }
 
-#artist-search {
+#search {
   display: inline-block;
-  margin-right: 10%
+  margin:auto;
+  padding: 10px 20px 10px 20px;
 }
 
-#album-search {
-  display: inline-block;
-  margin-left: 10%;
+#search input {
+height: 25px;
+width: 300px;
+margin: 0;
+padding: 0;
+font-size: 15px;
+border: 1px solid #CCCCCC;
 }
 
+#search [type="submit"] {
+height: 29px;
+width: 150px;
+margin: 0;
+padding: 0;
+font-size: 15px;
+background-color: #FFFFFF;
+border: 1px solid #CCCCCC;
+}
 
+#create-edit-form input {
+height: 25px;
+width: 200px;
+margin: 0;
+padding: 0;
+font-size: 15px;
+border: 1px solid #CCCCCC;
+}
+
+#create-edit-form [type="submit"] {
+height: 29px;
+width: 100px;
+margin: 0;
+padding: 0;
+font-size: 15px;
+background-color: #FFFFFF;
+border: 1px solid #CCCCCC;
+}
+
+#create-edit-form2 [type="submit"] {
+height: 29px;
+width: 100px;
+margin: 0;
+padding: 0;
+font-size: 13px;
+background-color: #FFFFFF;
+border: 1px solid #CCCCCC;
+}
 
 @media (min-width: 480px) {
   .grid-row-sm {

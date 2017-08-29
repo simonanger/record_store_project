@@ -12,14 +12,14 @@
     <p>Cost: £<%= album.cost %></p>
     <p>Sale price: £<%= album.sale %></p>
 
-    <form action="/album/<%= album.id %>/edit">
+    <form id="create-edit-form2" action="/album/<%= album.id %>/edit">
       <input type="submit" value="Edit Album Info">
     </form>
 
-    <form action="/album/<%= album.id%>/delete" method="post">
+    <form id="create-edit-form2" action="/album/<%= album.id%>/delete" method="post">
       <input type="submit" value="Delete Album">
     </form>
-    
+
     <p><img src="<%= album.artwork %>" alt="album-artwork" id="album_art"></p>
     </div>
   <% end %>
