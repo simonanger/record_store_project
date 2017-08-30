@@ -67,8 +67,6 @@ class Artist
   end
 
   def self.names()
-    sql = 'SELECT * FROM artists;'
-    artist_array = SqlRunner.run(sql, [])
     artists = Artist.all
     names = artists.map {|artists| artists.name}
     return names
